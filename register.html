@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Register - Evoria</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">Evoria</div>
+    </header>
+
+    <section class="register-wrapper">
+      <div class="register-card">
+        <h2>Register for Event</h2>
+
+        <form id="registerForm">
+          <div class="input-group">
+            <label>Full Name</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label>Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label>Event</label>
+            <input type="text" id="eventTitle" readonly />
+          </div>
+
+          <button type="submit" class="register-btn">Register Now</button>
+        </form>
+
+        <p id="msg"></p>
+      </div>
+    </section>
+
+    <script src="register.js"></script>
+  </body>
+</html>
