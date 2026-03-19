@@ -8,19 +8,19 @@
   </head>
   <body>
     <header class="navbar">
-      <div class="logo" style="font-family: Orbitron">Evoria</div>
+      <div class="logo">Evoria</div>
       <nav id="navMenu">
-        <a href="#">Home</a>
-        <a href="#">Events</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="#home">Home</a>
+        <a href="#events">Events</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
         <button class="explore-btn" onclick="scrollToEvents()">Explore</button>
       </nav>
       <div class="menu-toggle" id="menuToggle">☰</div>
       <a href="registrations.html" class="reg-btn">Registrations</a>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="home">
       <div class="hero-content">
         <h1>Welcome to Evoria</h1>
         <p class="tagline">
@@ -30,15 +30,15 @@
         <div class="search-box">
           <input type="text" id="searchInput" placeholder="Search events..." />
           <input type="date" id="dateInput" />
-          <button onclick="SearchEvents()">Find Events</button>
+          <button onclick="searchEvents()">Find Events</button>
         </div>
       </div>
     </section>
 
     <section class="categories">
-      <div class="cat" onclick="filterCategory('Tech')">Tech</div>
-      <div class="cat" onclick="filterCategory('Cultural')">Cultural</div>
-      <div class="cat" onclick="filterCategory('Workshop')">Workshops</div>
+      <a href="tech.html" class="cat">Tech</a>
+      <a href="cultural.html" class="cat">Cultural</a>
+      <a href="workshops.html" class="cat">Workshops</a>
     </section>
 
     <section class="events" id="events">

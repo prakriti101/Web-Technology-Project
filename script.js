@@ -38,9 +38,9 @@ function displayEvents(list) {
 
   list.forEach((event) => {
     container.innerHTML += `
-      <div class="event-card">
+      <div class="event-card" onclick="openEvent('${event.title}')">
         <img src="${event.img}">
-        <div class="event-info">
+        <div class="event-info" onclick="event.stopPropagation()">
           <h3>${event.title}</h3>
           <p>${event.category} • ${event.date}</p>
           <button onclick="openRegister('${event.title}')">
@@ -89,6 +89,10 @@ function scrollToEvents() {
 
 function openRegister(title) {
   window.location.href = "register.html?event=" + encodeURIComponent(title);
+}
+
+function openEvent(title) {
+  window.location.href = "event.html?name=" + encodeURIComponent(title);
 }
 
 const menuToggle = document.getElementById("menuToggle");

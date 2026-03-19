@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event Details - Evoria</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo" style="font-family: Orbitron">Evoria</div>
+
+      <nav>
+        <a href="index.html#home">Home</a>
+        <a href="index.html#events">Events</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+        <button class="explore-btn" onclick="goHome()">Explore</button>
+      </nav>
+    </header>
+
+    <section class="event-detail">
+      <div class="detail-card">
+        <h1 id="eventTitle"></h1>
+        <p><strong>Date:</strong> <span id="eventDate"></span></p>
+        <p><strong>Location:</strong> <span id="eventLocation"></span></p>
+        <p>
+          <strong>Who should attend:</strong> <span id="eventAudience"></span>
+        </p>
+        <p><strong>Host:</strong> <span id="eventHost"></span></p>
+
+        <button onclick="goRegister()" class="register-btn">
+          Register Now
+        </button>
+      </div>
+    </section>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const name = params.get("name");
+
+      const data = {
+        "AI Workshop": {
+          date: "10 April 2026",
+          location: "Online (Zoom)",
+          audience: "Students interested in AI & ML",
+          host: "Google Developer Club",
+        },
+        "Startup Meetup": {
+          date: "10 April 2026",
+          location: "Auditorium Hall",
+          audience: "Entrepreneurs & Innovators",
+          host: "Startup India",
+        },
+        "Cultural Fest": {
+          date: "10 April 2026",
+          location: "College Ground",
+          audience: "All students",
+          host: "Cultural Committee",
+        },
+        "Dance Workshop": {
+          date: "10 April 2026",
+          location: "Dance Studio",
+          audience: "Dance enthusiasts",
+          host: "Dance Club",
+        },
+      };
+
+      if (data[name]) {
+        document.getElementById("eventTitle").innerText = name;
+        document.getElementById("eventDate").innerText = data[name].date;
+        document.getElementById("eventLocation").innerText =
+          data[name].location;
+        document.getElementById("eventAudience").innerText =
+          data[name].audience;
+        document.getElementById("eventHost").innerText = data[name].host;
+      }
+
+      function goHome() {
+        window.location.href = "index.html#events";
+      }
+
+      function goRegister() {
+        window.location.href =
+          "register.html?event=" + encodeURIComponent(name);
+      }
+    </script>
+  </body>
+</html>
